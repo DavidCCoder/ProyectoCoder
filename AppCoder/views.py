@@ -4,25 +4,26 @@ from AppCoder.models import Curso
 
 # Create your views here.
 
-def curso(self):
-
-    curso = Curso(nombre="Desarrolo Web", camada="1998")
-    curso.save()
-    documentotxt= f"--->Curso: {curso.nombre} --->Camada: {curso.camada}"
-    return HttpResponse(documentotxt)
-
 def inicio(request):
     
     return render(request, "AppCoder/inicio.html")
 
 def curso(request):
     
-    return render(request, 'AppCoder/cursos.html')
+    return render(request, 'AppCoder/curso.html')
+
+def padre(request):
+    
+    return render(request, 'AppCoder/padre.html')
 
 def profesores(request):
     
-    return render(request, 'AppCoder/pr')
+    return render(request, 'AppCoder/profesores.html')
 
 def estudiantes(request):
     
-    return render('Estudiantes')
+    return render('AppCoder/estuadiantes.html')
+
+def entregables(request):
+    
+    return render('AppCoder/entregables.html')
