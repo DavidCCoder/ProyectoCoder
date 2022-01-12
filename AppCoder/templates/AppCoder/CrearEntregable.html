@@ -15,14 +15,14 @@
 <body>
     
     <br>
-    <p style="color: rgb(0, 0, 0);" style="font-size: 8px;">FORMULARIO PARA CREAR UN NUEVO CURSO</p>
+    <p style="color: rgb(0, 0, 0);" style="font-size: 8px;">FORMULARIO PARA CREAR UN NUEVO ENTREGABLE</p>
     <br>
 
     <form action="" method="POST">{% csrf_token %}
 
         <table>
 
-            {{ Formulario.as_table }}
+            {{ FormularioEntregable.as_table }}
 
         </table>
 

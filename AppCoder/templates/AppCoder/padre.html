@@ -9,6 +9,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Landing Page - Start Bootstrap Theme</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -23,12 +24,12 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="btn btn-primary" style="background-color: rgb(22, 58, 219);" href="{% url 'inicio' %}">Inicio</a>
-                <a class="btn btn-secondary" style="background-color: skyblue; color: black;" href="{% url 'curso' %}">Buscar un curso</a>
-                <a class="btn btn-secondary" style="background-color: skyblue; color: black;" href="{% url 'CrearCurso' %}">Crear un curso</a>
+                <a class="btn btn-secondary" style="background-color: skyblue; color: black;" href="{% url 'curso' %}">Cursos</a>
                 <a class="btn btn-secondary" style="background-color: skyblue; color: black;" href="{% url 'estudiantes' %}">Estudiantes</a>
                 <a class="btn btn-secondary" style="background-color: skyblue; color: black;" href="{% url 'profesores' %}">Profesores</a>
                 <a class="btn btn-secondary" style="background-color: skyblue; color: black;" href="{% url 'entregables' %}">Entregables</a>
             </div>
+
         </nav>
         <!-- Masthead-->
         <header class="masthead">
@@ -63,7 +64,7 @@
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto ">
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2021. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
@@ -71,7 +72,7 @@
                             <li class="list-inline-item me-4">
                                 <a href="https://www.facebook.com"><i class="bi-facebook fs-3"></i></a>
                             </li>
-                            <li class="list-inline-item me-4">
+                            <li class="list-inline-item me-4 text-align">
                                 <a href="https://twitter.com"><i class="bi-twitter fs-3"></i></a>
                             </li>
                             <li class="list-inline-item">
