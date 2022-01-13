@@ -1,6 +1,7 @@
 # ProyectoCoder
 
 1- Herencia de HTML: El html principal es "padre.html" y todos los demas archivos html tiene herencia del mismo.
+
 2- Models: En la siguiente direccion se encuentran 4 models
 
 (C:\Users\David\Desktop\CarpetaGit\ProyectoCoder\AppCoder\models)
