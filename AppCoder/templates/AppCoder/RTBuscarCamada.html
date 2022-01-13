@@ -1,0 +1,38 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+{% block contenidocambiado %}
+
+
+
+
+{% if cursos %}
+
+<ul>
+{% for curso in cursos %} 
+
+    <br>
+
+    <li>El curso encontrado es: <a style="color: red;">{{curso.nombre}}</a></li>
+    <li>Perteneciente a la camada: <a style="color: red;">{{curso.camada}}</a></li>
+
+    
+</p>
+
+{% endfor %}
+
+</ul>
+
+{% else %}
+<br>
+<a style="color: red; font-size: 18px; margin: 10px;" href="{% url 'BuscarCamada' %}">LOS DATOS ENVIADOS SON INCORRECTOS</a>
+<br>
+<p style="margin: 10px;" >Clik sobre el enlace para poder realizar una nueva busqueda</p>
+
+{% endif %}
+
+<p style="color: red; font-size: 18px;">{{respuesta}}</p>
+
+{% endblock contenidocambiado %}
+

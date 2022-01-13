@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from AppCoder.models import Curso, Estudiante, Profesor, Entregable
 from AppCoder.forms import form_curso, form_estudiante, form_profesor, form_entregable
 
-# Create your views here.
+# VIEWS POR DEFECTO
 
 def inicio(request):
     
@@ -29,7 +29,7 @@ def entregables(request):
     
     return render(request, 'AppCoder/entregables.html')
 
-
+# VIEWS PARA BOTONES Y CREACION
 
 def crear_curso(request):
 
@@ -132,6 +132,29 @@ def crear_entregable(request):
         FormularioEntregable= form_entregable()
 
     return render(request, "AppCoder/CrearEntregable.html", {"FormularioEntregable":FormularioEntregable})
+
+
+# VIEWS PARA BUSQUEDA
+
+
+def buscar_camada(request):
+
+    return render(request, "AppCoder/BuscarCamada.html")
+
+def buscar(request):
+
+    if request.GET["camada"]:
+
+        camada = request.GET["camada"]
+        cursos = Curso.objects.filter(camada=camada)
+
+        return render(request, "AppCoder/RTBuscarCamada.html", {"cursos":cursos, "camada":camada})
+
+    else:
+
+        respuesta = "No enviaste los datos correctos"
+
+    return render(request,"AppCoder/inicio.html",{"respuesta":respuesta})
 
 
             
