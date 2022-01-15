@@ -4,10 +4,11 @@
 
 {% block contenidocambiado %}
 
-<form action="Buscar/" method="GET">
+<form action="{% url 'Buscar' %}" method="GET">
 
     <br>
-    <span style="border-image: initial; border: 2px solid red; margin: 30px;">INTRODUCE LA CAMADA QUE DESEA BUSCAR: </span>
+    <span style="border-image: initial; border: 2px solid red; margin: 30px;">INTRODUCE LA CAMADA QUE DESEA BUSCAR:
+    </span>
     <input type="number" name="camada" id="camada">
     <input type="submit" value="Buscar">
 

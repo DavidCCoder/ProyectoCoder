@@ -5,31 +5,38 @@ from AppCoder.forms import form_curso, form_estudiante, form_profesor, form_entr
 
 # VIEWS POR DEFECTO
 
+
 def inicio(request):
-    
+
     return render(request, 'AppCoder/inicio.html')
 
+
 def curso(request):
-    
+
     return render(request, 'AppCoder/curso.html')
 
+
 def padre(request):
-    
+
     return render(request, 'AppCoder/padre.html')
 
+
 def profesores(request):
-    
+
     return render(request, 'AppCoder/profesores.html')
 
+
 def estudiantes(request):
-    
+
     return render(request, 'AppCoder/estudiantes.html')
 
+
 def entregables(request):
-    
+
     return render(request, 'AppCoder/entregables.html')
 
 # VIEWS PARA BOTONES Y CREACION
+
 
 def crear_curso(request):
 
@@ -39,11 +46,12 @@ def crear_curso(request):
 
         print(Formulario)
 
-        if Formulario.is_valid:
+        if Formulario.is_valid():
 
             informacion = Formulario.cleaned_data
 
-            curso = Curso(nombre=informacion['curso'], camada=informacion['camada'])
+            curso = Curso(
+                nombre=informacion['curso'], camada=informacion['camada'])
 
             curso.save()
 
@@ -51,10 +59,9 @@ def crear_curso(request):
 
     else:
 
-        Formulario= form_curso()
+        Formulario = form_curso()
 
-    return render(request, "AppCoder/CrearCurso.html", {"Formulario":Formulario})
-
+    return render(request, "AppCoder/CrearCurso.html", {"Formulario": Formulario})
 
 
 def crear_estudiante(request):
@@ -65,11 +72,12 @@ def crear_estudiante(request):
 
         print(FormularioEstudiantes)
 
-        if FormularioEstudiantes.is_valid:
+        if FormularioEstudiantes.is_valid():
 
             info = FormularioEstudiantes.cleaned_data
 
-            estudiante = Estudiante(nombre=info['nombre'], apellido=info['apellido'], email=info['email'])
+            estudiante = Estudiante(
+                nombre=info['nombre'], apellido=info['apellido'], email=info['email'])
 
             estudiante.save()
 
@@ -77,10 +85,9 @@ def crear_estudiante(request):
 
     else:
 
-        FormularioEstudiantes= form_estudiante()
+        FormularioEstudiantes = form_estudiante()
 
-    return render(request, "AppCoder/CrearEstudiante.html", {"FormularioEstudiantes":FormularioEstudiantes})
-
+    return render(request, "AppCoder/CrearEstudiante.html", {"FormularioEstudiantes": FormularioEstudiantes})
 
 
 def crear_profesor(request):
@@ -91,11 +98,12 @@ def crear_profesor(request):
 
         print(FormularioProfesor)
 
-        if FormularioProfesor.is_valid:
+        if FormularioProfesor.is_valid():
 
             info = FormularioProfesor.cleaned_data
 
-            profesor = Profesor(nombre=info['nombre'], apellido=info['apellido'], email=info['email'], profesion=info['profesion'])
+            profesor = Profesor(nombre=info['nombre'], apellido=info['apellido'],
+                                email=info['email'], profesion=info['profesion'])
 
             profesor.save()
 
@@ -103,10 +111,9 @@ def crear_profesor(request):
 
     else:
 
-        FormularioProfesor= form_profesor()
+        FormularioProfesor = form_profesor()
 
-    return render(request, "AppCoder/CrearProfesor.html", {"FormularioProfesor":FormularioProfesor})
-
+    return render(request, "AppCoder/CrearProfesor.html", {"FormularioProfesor": FormularioProfesor})
 
 
 def crear_entregable(request):
@@ -117,11 +124,12 @@ def crear_entregable(request):
 
         print(FormularioEntregable)
 
-        if FormularioEntregable.is_valid:
+        if FormularioEntregable.is_valid():
 
             info = FormularioEntregable.cleaned_data
 
-            entregable = Entregable(nombre=info['nombre'], fechaDeEntrega=info['fecha_entrega'], entregado=info['entregado'])
+            entregable = Entregable(
+                nombre=info['nombre'], fechaDeEntrega=info['fecha_entrega'], entregado=info['entregado'])
 
             entregable.save()
 
@@ -129,9 +137,9 @@ def crear_entregable(request):
 
     else:
 
-        FormularioEntregable= form_entregable()
+        FormularioEntregable = form_entregable()
 
-    return render(request, "AppCoder/CrearEntregable.html", {"FormularioEntregable":FormularioEntregable})
+    return render(request, "AppCoder/CrearEntregable.html", {"FormularioEntregable": FormularioEntregable})
 
 
 # VIEWS PARA BUSQUEDA
@@ -141,6 +149,7 @@ def buscar_camada(request):
 
     return render(request, "AppCoder/BuscarCamada.html")
 
+
 def buscar(request):
 
     if request.GET["camada"]:
@@ -148,13 +157,10 @@ def buscar(request):
         camada = request.GET["camada"]
         cursos = Curso.objects.filter(camada=camada)
 
-        return render(request, "AppCoder/RTBuscarCamada.html", {"cursos":cursos, "camada":camada})
+        return render(request, "AppCoder/RTBuscarCamada.html", {"cursos": cursos, "camada": camada})
 
     else:
 
         respuesta = "No enviaste los datos correctos"
 
-    return render(request,"AppCoder/inicio.html",{"respuesta":respuesta})
-
-
-            
+    return render(request, "AppCoder/inicio.html", {"respuesta": respuesta})

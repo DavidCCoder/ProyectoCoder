@@ -4,35 +4,24 @@
 
 {% block contenidocambiado %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREAR UN CURSO NUEVO</title>
-</head>
-<body>
-    
+<br>
+<p style="color: rgb(0, 0, 0);" style="font-size: 8px;">FORMULARIO PARA CREAR UN NUEVO PROFESOR</p>
+<br>
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+
+        {{ FormularioProfesor.as_table }}
+
+    </table>
+
     <br>
-    <p style="color: rgb(0, 0, 0);" style="font-size: 8px;">FORMULARIO PARA CREAR UN NUEVO PROFESOR</p>
-    <br>
-
-    <form action="" method="POST">{% csrf_token %}
-
-        <table>
-
-            {{ FormularioProfesor.as_table }}
-
-        </table>
-
-        <br>
 
 
-        <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar">
 
-    </form>
-</body>
-</html>
+</form>
+
 
 {% endblock contenidocambiado %}

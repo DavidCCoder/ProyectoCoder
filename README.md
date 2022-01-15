@@ -11,7 +11,7 @@
 - Cursos
 - Estudiantes
 - Profesores
-- Esntregables
+- Entregables
 
 Se mostrará un nuevo botón que nos permitirá ingresar datos a nuestros models.
 
