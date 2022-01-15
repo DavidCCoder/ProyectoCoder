@@ -44,8 +44,6 @@ def crear_curso(request):
 
         Formulario = form_curso(request.POST)
 
-        print(Formulario)
-
         if Formulario.is_valid():
 
             informacion = Formulario.cleaned_data
@@ -69,8 +67,6 @@ def crear_estudiante(request):
     if request.method == 'POST':
 
         FormularioEstudiantes = form_estudiante(request.POST)
-
-        print(FormularioEstudiantes)
 
         if FormularioEstudiantes.is_valid():
 
@@ -96,8 +92,6 @@ def crear_profesor(request):
 
         FormularioProfesor = form_profesor(request.POST)
 
-        print(FormularioProfesor)
-
         if FormularioProfesor.is_valid():
 
             info = FormularioProfesor.cleaned_data
@@ -121,8 +115,6 @@ def crear_entregable(request):
     if request.method == 'POST':
 
         FormularioEntregable = form_entregable(request.POST)
-
-        print(FormularioEntregable)
 
         if FormularioEntregable.is_valid():
 
