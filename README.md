@@ -1,6 +1,6 @@
 # ProyectoCoder
 
-1- Herencia de HTML: El html principal es "padre.html" y todos los demás archivos html tiene heredan del mismo.
+1- Herencia de HTML: El html principal es "padre.html" y todos los demás archivos html heredan del mismo.
 
 2- Models: En la siguiente dirección se encuentran 4 models
 
