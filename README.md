@@ -4,7 +4,7 @@
 
 2- Models: En la siguiente dirección se encuentran 4 models
 
-(C:\Users\David\Desktop\CarpetaGit\ProyectoCoder\AppCoder\models)
+(CarpetaGit\ProyectoCoder\AppCoder\models)
 
 3- Insertar datos: Al cliquear en cualquier de los siguientes botones:
 
