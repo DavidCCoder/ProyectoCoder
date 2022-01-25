@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from AppCoder.models import Curso, Estudiante, Profesor, Entregable
-from AppCoder.forms import form_curso, form_estudiante, form_profesor, form_entregable
+from AppCoder.forms import FormCurso, FormEstudiante, FormProfesor, FormEntregable
 
 # VIEWS POR DEFECTO
 
@@ -42,7 +42,7 @@ def crear_curso(request):
 
     if request.method == 'POST':
 
-        Formulario = form_curso(request.POST)
+        Formulario = FormCurso(request.POST)
 
         if Formulario.is_valid():
 
@@ -57,16 +57,16 @@ def crear_curso(request):
 
     else:
 
-        Formulario = form_curso()
+        Formulario = FormCurso()
 
-    return render(request, "AppCoder/CrearCurso.html", {"Formulario": Formulario})
+    return render(request, "AppCoder/crear_curso.html", {"Formulario": Formulario})
 
 
 def crear_estudiante(request):
 
     if request.method == 'POST':
 
-        FormularioEstudiantes = form_estudiante(request.POST)
+        FormularioEstudiantes = FormEstudiante(request.POST)
 
         if FormularioEstudiantes.is_valid():
 
@@ -81,16 +81,16 @@ def crear_estudiante(request):
 
     else:
 
-        FormularioEstudiantes = form_estudiante()
+        FormularioEstudiantes = FormEstudiante()
 
-    return render(request, "AppCoder/CrearEstudiante.html", {"FormularioEstudiantes": FormularioEstudiantes})
+    return render(request, "AppCoder/crear_estudiante.html", {"FormularioEstudiantes": FormularioEstudiantes})
 
 
 def crear_profesor(request):
 
     if request.method == 'POST':
 
-        FormularioProfesor = form_profesor(request.POST)
+        FormularioProfesor = FormProfesor(request.POST)
 
         if FormularioProfesor.is_valid():
 
@@ -105,16 +105,16 @@ def crear_profesor(request):
 
     else:
 
-        FormularioProfesor = form_profesor()
+        FormularioProfesor = FormProfesor()
 
-    return render(request, "AppCoder/CrearProfesor.html", {"FormularioProfesor": FormularioProfesor})
+    return render(request, "AppCoder/crear_profesor.html", {"FormularioProfesor": FormularioProfesor})
 
 
 def crear_entregable(request):
 
     if request.method == 'POST':
 
-        FormularioEntregable = form_entregable(request.POST)
+        FormularioEntregable = FormEntregable(request.POST)
 
         if FormularioEntregable.is_valid():
 
@@ -129,9 +129,9 @@ def crear_entregable(request):
 
     else:
 
-        FormularioEntregable = form_entregable()
+        FormularioEntregable = FormEntregable()
 
-    return render(request, "AppCoder/CrearEntregable.html", {"FormularioEntregable": FormularioEntregable})
+    return render(request, "AppCoder/crear_entregable.html", {"FormularioEntregable": FormularioEntregable})
 
 
 # VIEWS PARA BUSQUEDA
@@ -139,7 +139,7 @@ def crear_entregable(request):
 
 def buscar_camada(request):
 
-    return render(request, "AppCoder/BuscarCamada.html")
+    return render(request, "AppCoder/buscar_camada.html")
 
 
 def buscar(request):
@@ -149,7 +149,7 @@ def buscar(request):
         camada = request.GET["camada"]
         cursos = Curso.objects.filter(camada=camada)
 
-        return render(request, "AppCoder/RTBuscarCamada.html", {"cursos": cursos, "camada": camada})
+        return render(request, "AppCoder/RTbuscar_camada.html", {"cursos": cursos, "camada": camada})
 
     else:
 

@@ -2,20 +2,20 @@ from django import forms
 from datetime import datetime
 
 
-class form_curso(forms.Form):
+class FormCurso(forms.Form):
 
     curso = forms.CharField(max_length=30)
     camada = forms.IntegerField()
 
 
-class form_estudiante(forms.Form):
+class FormEstudiante(forms.Form):
 
     nombre = forms.CharField(max_length=30)
     apellido = forms.CharField(max_length=30)
     email = forms.EmailField()
 
 
-class form_profesor(forms.Form):
+class FormProfesor(forms.Form):
 
     nombre = forms.CharField(max_length=30)
     apellido = forms.CharField(max_length=30)
@@ -23,7 +23,7 @@ class form_profesor(forms.Form):
     profesion = forms.CharField(max_length=30)
 
 
-class form_entregable(forms.Form):
+class FormEntregable(forms.Form):
 
     nombre = forms.CharField(max_length=30)
     fecha_entrega = forms.DateField()
